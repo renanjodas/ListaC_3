@@ -1,0 +1,507 @@
+using System;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LISTA2
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{   /*Declaracao de variavel do Menu Principal - int e String*/
+			int questao, contadorGeral = 1;
+			string respostaGeral;
+			/*Condicao Repeticao para que o usuario retorne ao inicio do menu caso queira */
+			while (contadorGeral < 100)
+			{
+
+				Console.WriteLine("----------------------------------------------------------------");
+				Console.WriteLine(" ");
+				Console.WriteLine("LISTA 3 - EXERCÍCIOS");
+				Console.WriteLine(" ");
+				Console.WriteLine("( 1 ) - Programa que armazena o valor 999 na variável A e o valor 555 na variável B. Após troca seus valores utilizando uma variável C");
+				Console.WriteLine("( 2 ) - Conversão de Temperatura em celsius para fahrenheit.");
+				Console.WriteLine("( 3 ) - Descubra o Antecessor e o Sucessor de um número");
+				Console.WriteLine("( 4 ) - Calculo de Média Simples Aritmética");
+				Console.WriteLine("( 5 ) - Calculo de meses em Dias");
+				Console.WriteLine("( 6 ) - Calculo de média de 5 números");
+				Console.WriteLine("( 7 ) - Calculo de Valor de Venda de um Carro");
+				Console.WriteLine("( 8 ) - Calculo de Juros Simples");
+				Console.WriteLine("( 9 ) - Reajuste de Salário");
+				Console.WriteLine("( 10 ) - Cálculo de Operações Matemáticas Simples");
+				Console.WriteLine("( 11 ) - Descubra se número é Par ou Ímpar");
+				Console.WriteLine("( 12 ) - Descubra se número é POSITIVO ou NEGATIVO");
+				Console.WriteLine("( 13 ) - Descubra se número é MAIOR ou MENOR que 10");
+				Console.WriteLine("( 14 ) - Descubra se número é um número PRIMO");
+				Console.WriteLine("( 15 ) - Contagem de Números Pares");
+				Console.WriteLine("( 16 ) - Adivinhe número de 1 até 10");
+				Console.WriteLine("( 17 ) - Contagem de 1 a 100");
+				Console.WriteLine("( 18 ) - SAIR DO PROGRAMA!!");
+				Console.WriteLine(" ");
+				Console.WriteLine("----------------------------------------------------------------");
+				Console.WriteLine(" ");
+				Console.WriteLine("Escolha uma das opções acima:");
+				questao = int.Parse(Console.ReadLine());
+				Console.Clear();
+
+				switch (questao)
+				{
+					case 1:
+							/*Declaracao das variaveis atribuindo valores */
+							int A = 999, B = 555, C;
+
+							Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 1 ) - programa que armazena o valor 999 na variável A e o valor 555 na variável B. Após troca seus valores utilizando uma variável C");
+						Console.WriteLine(" ");
+							/*Exibe os valores iniciais das variaveis, ja atribuidos */
+							Console.WriteLine("Valor inicial de A = " + A);
+							Console.WriteLine("Valor inicial de B = " + B);
+
+							/*Atribui a C o valor de B */
+							C = B;
+							/*Atribui a B o valor de A */
+							B = A;
+							/*Atribui a A o valor de C que era o B */
+							A = C;
+
+							/*Atribuindo espaço entres exibicao de informações para um design mais organizado */
+							Console.WriteLine(" ");
+
+							/*Mensagem amigável do processo executado e o valores finais das variaveis*/
+							Console.WriteLine("Invertendo os valores de A e B, utilizando uma 3ª variavel vazia 'C' !");
+
+							Console.WriteLine(" ");
+							Console.WriteLine("Valor Final de A = " + A);
+							Console.WriteLine("Valor Final de B = " + B);
+							break;
+					case 2:
+						/*Declaracao de variaveis do tipo double */
+						double celsius, fahrenheit;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 2 ) - Conversão de Temperatura em celsius para fahrenheit.");
+						Console.WriteLine(" ");
+						
+						/* Questionamento e atribuicao da variavel celsius, para o usuario */
+						Console.WriteLine("Informe a temperatura em Graus Celsius");
+						celsius = Convert.ToDouble(Console.ReadLine());
+						/* Calculo para conversao de graus celsius em fahrenheit, atribuindo o valor, posteriormente */
+						fahrenheit = 1.8 * celsius + 32;
+						Console.WriteLine(" ");
+
+						/* Impressao visual amigavel do valor informado pelo usuario em Celsius e consequente resultado da conversao para fahrenheit */
+						Console.WriteLine("A conversão foi finalizada: ");
+						Console.WriteLine(" ");
+						Console.WriteLine(" Temperatura Informada em Celsius ----- | " + celsius + "°C | ---");
+						Console.WriteLine("");
+						Console.WriteLine(" Temperatura Convertida em Fahreheit -- | " + fahrenheit + "°F | ---");
+						Console.WriteLine(" ");
+						break;
+					case 3:
+						/*Declaracao de Variaveis do tipo int */
+						int numero, antecessor, sucessor;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 3 ) - Descubra o Antecessor e o Sucessor de um número");
+						Console.WriteLine(" ");
+						/* Solicitacao e leitura de numero, junto ao usuario */
+						Console.WriteLine("Informe um número");
+						numero = Convert.ToInt32(Console.ReadLine());
+
+						/* Calculo para atribuição das variaveis antecessor e sucessor */
+						antecessor = numero - 1;
+						sucessor = numero + 1;
+
+						/* Apresentacao do resultado para o usuario */
+						Console.WriteLine("O antecessor do número " + numero + " é " + antecessor + ", e o sucessor é " + sucessor + ".");
+						break;
+					case 4:
+						/* Declaracao de variaveis do tipo double */
+						double valor1, valor2, valor3, media;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("(4) - Calculo de Média Simples Aritmética"); ;
+						Console.WriteLine(" ");
+						/* solicitacao e atribuicao de valores a variaveis, para calculo da media */
+						Console.WriteLine("Vamos calcular a media de 3 valores!");
+						Console.WriteLine("Informe o primeiro valor: ");
+						valor1 = Double.Parse(Console.ReadLine());
+
+						Console.WriteLine("Informe o segundo valor: ");
+						valor2 = Double.Parse(Console.ReadLine());
+
+						Console.WriteLine("Informe o terceiro valor: ");
+						valor3 = Double.Parse(Console.ReadLine());
+
+						/* Calculo da media e atribuicao do resultado para a variavel*/
+						media = (valor1 + valor2 + valor3) / 3;
+
+						/* Apresentacao do resultado da media para o usuario */
+						Console.WriteLine("A media simples dos 3 numeros informados é " + media.ToString("F2"));
+						break;
+					case 5:
+						/*Declaracao de variavel do tipo int*/
+						int dias, meses;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 5 ) - Calculo de meses em Dias");
+						Console.WriteLine(" ");
+						Console.WriteLine("Informe a quantidade de meses para saber a quantidade de dias:");
+						meses = Int32.Parse(Console.ReadLine());
+
+						dias = meses * 30;
+
+						Console.WriteLine("Convertendo " + meses + " meses em dias, o resultado é " + dias + " dias! (Considerando que cada mês tenha 30 dias)");
+						break;
+					case 6:
+						/*Declaracao das variaveis do tipo float*/
+						float numero1, numero2, numero3, numero4, numero5, ex6Media;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 6 ) - Calculo de média de 5 números");
+						Console.WriteLine(" ");
+						/* Impressao de mensagem amigável de apresentacao */
+						Console.WriteLine("Informe 5 números para calcularmos a media");
+
+						/* Solicitacao e leitura dos números para calculo da media */
+						Console.WriteLine("Informe o 1º número");
+						numero1 = float.Parse(Console.ReadLine());
+
+						Console.WriteLine("Informe o 2º número");
+						numero2 = float.Parse(Console.ReadLine());
+
+						Console.WriteLine("Informe o 3º número");
+						numero3 = float.Parse(Console.ReadLine());
+
+						Console.WriteLine("Informe o 4º número");
+						numero4 = float.Parse(Console.ReadLine());
+
+						Console.WriteLine("Informe o 5º número");
+						numero5 = float.Parse(Console.ReadLine());
+
+						/* calculo e atribuicao de valor da variavel media */
+						ex6Media = (numero1 + numero2 + numero3 + numero4 + numero5) / 5;
+
+						/* Impressao do resultado */
+						Console.WriteLine("A media dos numeros informados é: " + ex6Media + " !");
+						break;
+					case 7:
+						/*declaracao das variaveis */
+						double custo_fabrica = 0, perc_distribuidor = 0, perc_imposto = 0, valor_venda = 0;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 7 ) - Calculo de Valor de Venda de um Carro");
+						Console.WriteLine(" ");
+						/* Questionamento de valores para atribuição de valores as variaveis */
+						Console.WriteLine("Informe o custo de fabricação do carro:");
+						custo_fabrica = Double.Parse(Console.ReadLine());
+						Console.WriteLine("Informe a porcentagem do distribuidor: (somente numero)");
+						perc_distribuidor = Double.Parse(Console.ReadLine());
+						Console.WriteLine("Informe a porcentagem do imposto: (somente numero)");
+						perc_imposto = Double.Parse(Console.ReadLine());
+
+						/* Calculo de valore de venda */
+						valor_venda = custo_fabrica + (custo_fabrica * (perc_distribuidor / 100)) + (custo_fabrica * (perc_imposto / 100));
+
+						/* Apresentacao do resultado para usuario */
+						Console.WriteLine("O valor de venda do carro é " + valor_venda);
+						break;
+					case 8:
+						/* Declaracao de variaveis */
+						double juros = 0, capital = 0, taxa = 0;
+						int periodo = 0;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 8 ) - Calculo de Juros Simples");
+						Console.WriteLine(" ");
+
+						/* Questionamento ao usuário para atribuição de valores a variáveis */
+						Console.WriteLine("Informe o capital inicial:");
+						capital = Double.Parse(Console.ReadLine());
+
+						Console.WriteLine("Informe a taxa(mês):");
+						taxa = Double.Parse(Console.ReadLine());
+
+						Console.WriteLine("Informe o período de meses:");
+						periodo = Int32.Parse(Console.ReadLine());
+
+						/* Calculo de Juros Simples */
+						juros = capital * (taxa / 100) * periodo;
+
+						/* Impressão do resultado para o Usuário */
+						Console.WriteLine("O Juros Simples é de " + juros);
+						break;
+					case 9:
+						/* Declaracao de variaveis */
+						double salario_inicial = 0, reajuste = 0, salario_reajustado = 0;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 9 ) - Reajuste de Salário");
+						Console.WriteLine(" ");
+
+						/* Questionamento ao usuario para atribuição de valores as variaveis */
+						Console.WriteLine("Informe o salario do funcionario:");
+						salario_inicial = Double.Parse(Console.ReadLine());
+
+						Console.WriteLine("Informe a porcentagem do reajuste:");
+						reajuste = Double.Parse(Console.ReadLine());
+
+						/* Calculo de reajuste com base nos dados informados pelo usuario */
+						salario_reajustado = salario_inicial + (salario_inicial * (reajuste / 100));
+
+						/* Impressao de resultado */
+						Console.WriteLine("O valor do salário reajustado é de R$ " + salario_reajustado.ToString("F2"));
+						break;
+					case 10:
+						/* Declaracao de variaveis */
+						int ex10Numero1, ex10Numero2, ex10Escolha;
+						double ex10Resultado;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 10 ) - Cálculo de Operações Matemáticas Simples");
+						Console.WriteLine(" ");
+
+						/* Questionamento ao usuario para atribuição de valores as variaveis */
+						Console.WriteLine("Antes de selecionar a operação: ");
+						Console.WriteLine("Informe o 1º numero:");
+						ex10Numero1 = int.Parse(Console.ReadLine());
+						Console.WriteLine("Informe o 2º numero:");
+						ex10Numero2 = int.Parse(Console.ReadLine());
+						Console.WriteLine(" ");
+
+						Console.WriteLine("Agora escolha qual a operação:");
+						Console.WriteLine("(1) Adição");
+						Console.WriteLine("(2) Subtração");
+						Console.WriteLine("(3) Multiplicação");
+						Console.WriteLine("(4) Divisão");
+						Console.WriteLine(" ");
+						ex10Escolha = int.Parse(Console.ReadLine());
+
+						switch (ex10Escolha){
+							case 1:
+								ex10Resultado = ex10Numero1 + ex10Numero2;
+								Console.WriteLine("O resultado da soma dos números informados é " + ex10Resultado + " !");
+								break;
+							case 2:
+								ex10Resultado = ex10Numero1 - ex10Numero2;
+								Console.WriteLine("O resultado da subtração dos números informados é " + ex10Resultado + " !");
+								break;
+							case 3:
+								ex10Resultado = ex10Numero1 * ex10Numero2;
+								Console.WriteLine("O resultado da multiplicação dos números informados é " + ex10Resultado + " !");
+								break;
+							case 4:
+								ex10Resultado = ex10Numero1 / ex10Numero2;
+								Console.WriteLine("O resultado da divisão dos números informados é " + ex10Resultado + " !");
+								break;
+						}
+						break;
+					case 11:
+						/* Declaracao de variaveis */
+						int ex11Numero, ex11Resultado;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 11 ) - Descubra se número é Par ou Ímpar");
+						Console.WriteLine(" ");
+
+						/* Questionamento ao usuario para atribuição de valores as variaveis */
+						Console.WriteLine("Informe um número");
+						ex11Numero = int.Parse(Console.ReadLine());
+
+						ex11Resultado = ex11Numero % 2;
+
+						Console.WriteLine(" ");
+						if (ex11Resultado == 0)	{
+							Console.WriteLine("O número informado é PAR!");
+						}else{
+							Console.WriteLine("O número informado é ÍMPAR!");
+						}
+						break;
+					case 12:
+						/* Declaracao de variaveis */
+						int ex12Numero;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 12 ) - Descubra se número é POSITIVO ou NEGATIVO");
+						Console.WriteLine(" ");
+
+						/* Questionamento ao usuario para atribuição de valores a variavel */
+						Console.WriteLine("Informe um número");
+						ex12Numero = int.Parse(Console.ReadLine());
+
+						Console.WriteLine(" ");
+						if (ex12Numero >= 0){
+							Console.WriteLine("O número informado é POSITIVO!");
+						}else{
+							Console.WriteLine("O número informado é NEGATIVO!");
+						}
+						break;
+					case 13:
+						/* Declaracao de variaveis */
+						int ex13Numero;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 13 ) - Descubra se um número é MAIOR ou MENOR que 10");
+						Console.WriteLine(" ");
+
+						/* Questionamento ao usuario para atribuição de valor a variavel */
+						Console.WriteLine("Informe um número:");
+						ex13Numero = int.Parse(Console.ReadLine());
+
+						Console.WriteLine(" ");
+						if (ex13Numero == 10){
+							Console.WriteLine("O número informado é o próprio 10!");
+						}else if (ex13Numero > 10){
+							Console.WriteLine("O número informado é MAIOR que 10!");
+						}else{
+							Console.WriteLine("O número informado é MENOR que 10");
+						}
+						break;
+					case 14:
+						/* Declaracao de variaveis */
+						int ex14Numero;
+						
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 14 ) - Descubra se número informado é um número PRIMO");
+						Console.WriteLine(" ");
+
+						/* Questionamento ao usuario para atribuição de valor a variavel */
+						Console.WriteLine("Informe um número:");
+						ex14Numero = int.Parse(Console.ReadLine());
+
+						Console.WriteLine(" ");
+						for (int i = 2; i < ex14Numero; i++) {
+								int ex14Resto = ex14Numero % i;
+								if (ex14Resto == 0) {
+									Console.WriteLine("O número " + ex14Numero + " não é um número primo");
+								} else {
+									Console.WriteLine("O número " + ex14Numero + " é um número primo");
+									
+								}
+							i = ex14Numero + 1;
+						}
+						break;
+					case 15:
+						/* Declaracao de variaveis */
+						int ex15Numero, ex15Contador = 0;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 15 ) - Contagem de Números Pares");
+						Console.WriteLine(" ");
+
+						/* Questionamento ao usuario para atribuição de valor a variavel */
+						Console.WriteLine("Informe um número inteiro:");
+						ex15Numero = int.Parse(Console.ReadLine());
+
+						Console.WriteLine(" ");
+						while (ex15Contador < ex15Numero){
+							Console.WriteLine(ex15Contador);
+							ex15Contador = ex15Contador + 2;
+						}
+						break;
+					case 16:
+						/* Declaracao de variaveis */
+						int numero_aleatorio, ex16Numero, ex16Contador = 1;
+						Random aleatorio = new Random();
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 16 ) - Adivinhe número de 1 até 10");
+						Console.WriteLine(" ");
+
+						/*Programa seleciona um numero aleatório de 1 a 10*/
+						numero_aleatorio = aleatorio.Next(1, 10);
+
+						Console.WriteLine("Você tem 3 tentativas para descobrir o numero de 1 a 10!");
+						Console.WriteLine(" ");
+
+						while (ex16Contador < 4){
+							/* Questionamento ao usuario para atribuição de valor a variavel */
+							Console.WriteLine("--------------------------------------------- ");
+							Console.WriteLine(" ");
+							Console.WriteLine("Esta é a sua " + ex16Contador + "ª tentativa");
+							Console.WriteLine("Informe um número:");
+							ex16Numero = int.Parse(Console.ReadLine());
+							if (ex16Numero == numero_aleatorio){
+								Console.WriteLine(" ");
+								Console.WriteLine("Parabéns! Você adivinhou!");
+								ex16Contador = 4;
+							}else if (ex16Numero > numero_aleatorio){
+								Console.WriteLine("O número informado é maior que o correto!");
+							}else{
+								Console.WriteLine("O número informado é menor que o correto!");
+							}
+							ex16Contador++;
+						}
+						Console.WriteLine("--------------------------------------------- ");
+						Console.WriteLine(" ");
+						Console.WriteLine("Fim de Jogo!");
+						Console.WriteLine(" ");
+						Console.WriteLine("O Número a ser adivinhado nesta jogada era: " + numero_aleatorio + " !");
+						break;
+					case 17:
+						/* Declaracao de variaveis */
+						int ex17Contador = 1;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 17 ) - Contagem de 1 a 100");
+						Console.WriteLine(" ");
+
+						/* Mensagem amigavel de inicio da contagem*/
+						Console.WriteLine("Iremos exibir todos os numeros de 1 até 100. Para iniciar pressione qualquer tecla!");
+						Console.ReadKey();
+						Console.WriteLine(" ");
+						while (ex17Contador <= 100){
+							Console.Write(" | " + ex17Contador);
+							ex17Contador++;
+						}
+						break;
+					case 18:
+						Console.Clear();
+						Console.WriteLine();
+						Console.WriteLine("Obrigado por visualizar e testar meu programa =D !!");
+						Console.WriteLine();
+						Console.WriteLine("Me Desculpe mas terei que perguntar novamente!!");
+						break;
+				} /*Fim do Switch*/
+				Console.WriteLine(" ");
+				Console.WriteLine("----------------------------------------");
+				Console.WriteLine(" ");
+				Console.WriteLine("Para continuar pressione qualquer tecla!");
+				Console.ReadKey();
+				Console.Clear();
+				Console.WriteLine("Deseja Voltar para o início e escolher outra opção? (s / n)");
+				respostaGeral = Console.ReadLine();
+				/*if para ação se usuario deseja retornar ao Menu Principal*/
+				if (respostaGeral == "S" || respostaGeral == "s")
+				{
+					contadorGeral++;
+				}
+				else
+				{
+					contadorGeral = 101;
+				}
+				Console.Clear();
+
+			} /*Fim While geral*/
+
+		}
+	}
+}
